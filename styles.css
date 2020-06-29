@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+}
+
+body {
+  /* background-color: #54C6BE; */
+  /* background-image: url(home-images/meadow.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat; */
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+#part1 {
+  position: relative;
+  animation: fadeIn ease 1.5s;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+#part2 {
+  animation: fadeIn ease 1.5s;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-left: 70px;
+  /* opacity: 0; */
+}
+
+#part3 {
+  margin-left: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+#part4 {
+  margin-left: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+
+/* SECTIONS */
+.section2 {
+  margin-left: 50px;
+  background: #F65C51;
+  /* background: linear-gradient(180deg, rgba(84, 198, 190) 0%, rgba(141, 217, 212) 50%, rgba(198, 236, 233) 100%); */
+  /* background: linear-gradient(180deg, rgba(84, 198, 190) 0%, rgba(255, 255, 255) 100%); */
+}
+
+.section3 {
+  /* background: linear-gradient(180deg, rgba(198, 236, 233) 0%, rgba(255, 255, 255) 30%); */
+  /* background: linear-gradient(180deg, rgba(170, 227, 223) 0%, rgba(255, 255, 255) 100%); */
+  background-color: white;
+}
+
+.section4 {
+  margin-bottom: 500px;
+  margin-left: 400px;
+  z-index: -1;
+}
+
+#home-title {
+  font-family: 'Karla', sans-serif;
+  font-size: 850%;
+  line-height: .9;
+  color: white;
+}
+
+/* images  */
+
+#globe-boi {
+  width: 300px;
+}
+
+.world-img {
+  position: absolute;
+}
+
+#image1 {
+  /* visibility: hidden; */
+  width: 250px;
+}
+
+#image2 {
+  visibility: hidden;
+  margin-top: 50px;
+}
+
+#image3 {
+  visibility: hidden;
+  margin-bottom: 20px;
+  width: 250px;
+}
+
+#image4 {
+  visibility: hidden;
+  margin-top: 160px;
+  left: 20px;
+}
+
+#image5 {
+  visibility: hidden;
+  width: 250px;
+  margin-top: 60px;
+  margin-left: 20px;
+  left: 80px;
+}
+
+#fire {
+  position: absolute;
+  width: 150px;
+  left: 250px;
+  top: 90px;
+}
+
+#scribble1 {
+  width: 200px;
+  position: absolute;
+  right: 180px;
+  top: 320px;
+  /* z-index: -1; */
+}
+
+
+#window {
+  margin-left: 80px;
+}
+
+/* #scribble2 {
+  width: 700px;
+  position: absolute;
+  left: 110px;
+  top: 40px;
+  z-index: 1;
+} */
+
+#scribble2 {
+  position: absolute;
+  left: 110px;
+  top: 40px;
+  z-index: 1;
+}
+
+
+/* TEXT */
+h1 {
+  font-family: 'Karla', sans-serif;
+  font-size: 80px;
+  line-height: .9;
+}
+
+p {
+  font-family: 'Quicksand', sans-serif;
+  color: black;
+  font-size: 20px;
+}
+
+.description {
+  font-family: 'Quicksand', sans-serif;
+  color: white;
+  font-size: 30px;
+  line-height: 1.9;
+}
+
+.tight-p {
+  margin-right: 200px;
+}
+
+#world {
+  /* margin: 50px; */
+}
+
+.left-indent {
+  margin-left: 350px;
+}
+
+/* .highlight {
+  text-decoration: none;
+  background-color: #8BE8CD;
+  display: inline-block;
+  height: 20px;
+  display: block;
+  position: absolute;
+} */
+
+/* PARALLAX */
+
+.wrapper {
+  /* The height needs to be set to a fixed value for the effect to work.
+   * 100vh is the full height of the viewport. */
+  height: 100vh;
+  /* The scaling of the images would add a horizontal scrollbar, so disable x overflow. */
+  overflow-x: hidden;
+  /* Enable scrolling on the page. */
+  overflow-y: auto;
+  /* Set the perspective to 2px. This is essentailly the simulated distance from the viewport to transformed objects.*/
+  perspective: 2px;
+}
+
+.section {
+  /* Needed for children to be absolutely positioned relative to the parent. */
+  position: relative;
+  /* The height of the container. Must be set, but it doesn't really matter what the value is. */
+  height: 100vh;
+  /* text-shadow: 0 0 5px #000; */
+
+  display: flex;
+  align-items: center;
+}
+
+.parallax::after {
+  /* Display and position the pseudo-element */
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  /* Move the pseudo-element back away from the camera,
+   * then scale it back up to fill the viewport.
+   * Because the pseudo-element is further away, it appears to move more slowly, like in real life. */
+  transform: translateZ(-1px) scale(1.5);
+  /* Force the background image to fill the whole element. */
+  background-size: 100%;
+  /* Keep the image from overlapping sibling elements. */
+  z-index: -1;
+}
+
+/* The styling for the static div. */
+/* .static {
+  background: white;
+} */
+
+/* Sets the actual background images to adorable kitties. This part is crucial. */
+.bg1::after {
+  background-image: url('home-images/meadow.jpg');
+}
+
+.bg4::after {
+  background-image: url('home-images/the-bean.jpg');
+  background-repeat: none;
+  z-index: -1;
+}
